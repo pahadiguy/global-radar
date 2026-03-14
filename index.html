@@ -24,7 +24,6 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{
 attribution:'Map'
 }).addTo(map);
 
-</script>
 fetch("https://opensky-network.org/api/states/all")
 .then(response => response.json())
 .then(data => {
@@ -49,5 +48,8 @@ L.marker([lat,lon])
 }
 
 });
+  
+</script>
+
 </body>
 </html>
