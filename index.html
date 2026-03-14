@@ -26,5 +26,29 @@ attribution:'Map'
 
 </script>
 
+  fetch("https://opensky-network.org/api/states/all")
+.then(response => response.json())
+.then(data => {
+
+var flights = data.states;
+
+for (var i = 0; i < flights.length; i++){
+
+var plane = flights[i];
+
+var lat = plane[6];
+var lon = plane[5];
+
+if(lat && lon){
+
+L.marker([lat,lon])
+.addTo(map)
+.bindPopup("Flight: "+plane[1]);
+
+}
+
+}
+
+});
 </body>
 </html>
